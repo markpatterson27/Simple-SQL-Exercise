@@ -9,24 +9,31 @@
         steps:
           - uses: actions/checkout@v2
 
-          - name: get tSQLt and extract
-            run: |
-              sudo apt-get install unzip
-              mkdir tSQLt
-              wget http://tsqlt.org/download/tsqlt/ -O tSQLt.zip
-              ls -al
-              unzip tSQLt.zip -d tSQLt/
-              ls -al tSQLt/
-          
-          - name: check files
-            run: ls -al tSQLt
+          # - name: install npm mssql
+          #   run: npm install mssql
 
-          # - name: setup SQL Server instance
+          # - name: get tSQLt and extract
           #   run: |
-          #     docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Pa$$w0rd1234' -p 1433:1433 -d mcr.microsoft.com/mssql/server:2019-latest
-            
-            # get tsqlt and extract
-            # create dockerfile
-            # build dockerfile
+          #     sudo apt-get install unzip
+          #     mkdir tSQLt
+          #     wget http://tsqlt.org/download/tsqlt/ -O tSQLt.zip
+          #     ls -al
+          #     unzip tSQLt.zip -d tSQLt/
+          #     ls -al tSQLt/
+          
+          # - name: check files
+          #   run: ls -al tSQLt
 
-          # - uses: education/autograding@v1
+          - name: setup SQL Server instance
+            run: docker run -v $(pwd):/app -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Pa$$w0rd1234' -p 1433:1433 --name sql2017 -d mcr.microsoft.com/mssql/server:2017-latest
+
+          - name: pause
+            run: sleep 30
+
+          - name: create command shortcut variable
+            run: DBCMD="docker exec sql2017 /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Pa\$\$w0rd1234"
+
+          # - name: run queries
+          #   run: mssql -u sa -p Pa\$\$w0rd1234 .databases
+
+          - uses: education/autograding@v1
