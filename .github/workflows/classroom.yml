@@ -10,15 +10,20 @@
           - uses: actions/checkout@v2
 
           - name: get tSQLt and extract
-            run: | 
-              mkdir tSQLt
-              wget -c https://github.com/tSQLt-org/tSQLt/archive/build-V1.0.5873.27393(2014)-successful-2014.tar.gz -O - | tar -xz -C ./tSQLt/
-              ls -al
-              ls -al tSQLt/
-
-          - name: setup SQL Server instance
             run: |
-              docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Pa$$w0rd1234' -p 1433:1433 -d mcr.microsoft.com/mssql/server:2019-latest
+              sudo apt-get install unzip
+              mkdir tSQLt
+              wget http://tsqlt.org/download/tsqlt/ -O tSQLt.zip
+              ls -al
+              unzip tSQLt.zip -d tSQLt/
+              ls -al tSQLt/
+          
+          - name: check files
+            run: ls -al tSQLt
+
+          # - name: setup SQL Server instance
+          #   run: |
+          #     docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Pa$$w0rd1234' -p 1433:1433 -d mcr.microsoft.com/mssql/server:2019-latest
             
             # get tsqlt and extract
             # create dockerfile
