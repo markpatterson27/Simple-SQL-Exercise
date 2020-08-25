@@ -6,4 +6,8 @@ In this exercise, learners/lecturers will write queries that create a database a
 
 1. Using the `create-database.sql` file, write a query that creates a database called `SimpleDB`.
 
+1. In `SimpleDB`, create a table called `customers` that has attributes for customer name and address.
+
+<br />
+
 ## References
