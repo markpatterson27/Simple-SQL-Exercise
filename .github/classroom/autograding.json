@@ -1,0 +1,24 @@
+{
+  "tests": [
+    {
+      "name": "Check query file runs",
+      "setup": "",
+      "run": "docker exec sql2017 /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Pa\\$\\$w0rd1234 -d master -i /app/create-database.sql",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "Check table exists",
+      "setup": "",
+      "run": "docker exec sql2017 /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Pa\\$\\$w0rd1234 -Q \"SELECT NAME FROM sys.sysdatabases\"",
+      "input": "",
+      "output": "SimpleDB",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    }
+  ]
+}
