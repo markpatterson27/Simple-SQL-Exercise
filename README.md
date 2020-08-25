@@ -4,6 +4,6 @@ In this exercise, learners/lecturers will write queries that create a database a
 
 ## Exercise 1
 
-1. Using the `create-database.sql` file, write a query that creates a table called `SimpleDB`.
+1. Using the `create-database.sql` file, write a query that creates a database called `SimpleDB`.
 
 ## References

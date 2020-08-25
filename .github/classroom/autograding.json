@@ -11,7 +11,7 @@
       "points": 10
     },
     {
-      "name": "Check table exists",
+      "name": "Check database exists",
       "setup": "",
       "run": "docker exec sql2017 /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Pa\\$\\$w0rd1234 -Q \"SELECT NAME FROM sys.sysdatabases\"",
       "input": "",
