@@ -14,6 +14,10 @@ In this exercise, learners/lecturers will write queries that create a database a
     | cust_name |
     | cust_address |
 
+1. Push your changes back to your assignment GitHub repo. Remember to try to make your commits atomic and your commit messages descriptive.
+
+1. Check either the Actions tab or assignments tab to see if you have completed the exercise successfully.
+
 <br />
 
 ## References
