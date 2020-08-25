@@ -8,6 +8,12 @@ In this exercise, learners/lecturers will write queries that create a database a
 
 1. In `SimpleDB`, create a table called `customers` that has attributes for customer name and address.
 
+    | customers |
+    |:---|
+    | customerId |
+    | cust_name |
+    | cust_address |
+
 <br />
 
 ## References
