@@ -83,7 +83,7 @@
     {
       "name": "Check customer address data type",
       "setup": "",
-      "run": "docker exec sql2017 /opt/mssql-tools/bi/sqlcmd -S localhost -U sa -P Pa\\$\\$w0rd1234 -Q \"USE SimpleDB SELECT DATA_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'customers' AND COLUMN_NAME = 'cust_address'\"",
+      "run": "docker exec sql2017 /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Pa\\$\\$w0rd1234 -Q \"USE SimpleDB SELECT DATA_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'customers' AND COLUMN_NAME = 'cust_address'\"",
       "input": "",
       "output": "nvarchar",
       "comparison": "included",
