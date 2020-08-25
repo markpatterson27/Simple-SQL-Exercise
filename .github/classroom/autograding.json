@@ -25,7 +25,7 @@
       "setup": "",
       "run": "docker exec sql2017 /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Pa\\$\\$w0rd1234 -Q \"SELECT TABLE_NAME FROM SimpleDB.INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE'\"",
       "input": "",
-      "output": "SimpleDB",
+      "output": "customers",
       "comparison": "included",
       "timeout": 10,
       "points": 10
