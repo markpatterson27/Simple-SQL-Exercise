@@ -10,11 +10,7 @@ In this exercise, learners/lecturers will write queries that create a database a
 
 1. In `SimpleDB`, create a table called `customers` that has attributes for customer name and address.
 
-    | customers |
-    |:---|
-    | customerId |
-    | cust_name |
-    | cust_address |
+    ![UML diagram](assets/SoWkIImgAStDuKhDAyaigLH8BYqkoSzDBIfMgEPIKD22yprJ56ni0hpjx82YkhfmgVYynDnK12yn9QKejRYOgvRB8JKl1MWi0000.svg)
 
 1. Push your changes back to your assignment GitHub repo. Remember to try to make your commits atomic and your commit messages descriptive.
 

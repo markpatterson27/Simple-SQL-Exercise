@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="112px" preserveAspectRatio="none" style="width:146px;height:112px;" version="1.1" viewBox="0 0 146 112" width="146px" zoomAndPan="magnify"><defs><filter height="300%" id="f1pt168z31drdj" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[b8a2cb9a13c9f6eb9af75ab9fc9108ad]
+class customers--><rect codeLine="1" fill="#FEFECE" filter="url(#f1pt168z31drdj)" height="86.4141" id="customers" style="stroke: #A80036; stroke-width: 1.5;" width="120" x="7" y="7"/><ellipse cx="32.8" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M31.5969,23.875 L33.05,23.875 L33.05,23.9844 C33.05,24.3906 33.0813,24.5469 33.1594,24.7031 C33.3156,24.9531 33.5969,25.1094 33.8938,25.1094 C34.1438,25.1094 34.4094,24.9688 34.5656,24.75 C34.6906,24.5938 34.7219,24.4375 34.7219,23.9844 L34.7219,22.0625 C34.7219,21.9063 34.7219,21.8594 34.7063,21.7031 C34.6438,21.2344 34.3313,20.9219 33.8781,20.9219 C33.6281,20.9219 33.3625,21.0625 33.1906,21.2813 C33.0813,21.4531 33.05,21.6094 33.05,22.0625 L33.05,22.1875 L31.5969,22.1875 L31.5969,19.7813 L35.5813,19.7813 L35.5813,20.6406 C35.5813,21.0469 35.6125,21.2188 35.6906,21.375 C35.8625,21.625 36.1438,21.7813 36.425,21.7813 C36.6906,21.7813 36.9563,21.6406 37.1281,21.4219 C37.2375,21.25 37.2688,21.1094 37.2688,20.6406 L37.2688,18.0938 L29.6437,18.0938 C29.2062,18.0938 29.0812,18.1094 28.925,18.2031 C28.675,18.3594 28.5187,18.6563 28.5187,18.9375 C28.5187,19.2188 28.6594,19.4688 28.8781,19.6406 C29.0344,19.75 29.2219,19.7813 29.6437,19.7813 L29.8937,19.7813 L29.8937,26.2969 L29.6437,26.2969 C29.2375,26.2969 29.0812,26.3125 28.925,26.4219 C28.675,26.5938 28.5187,26.8594 28.5187,27.1563 C28.5187,27.4219 28.6594,27.6719 28.8781,27.8281 C29.0187,27.9531 29.2531,28 29.6437,28 L37.6438,28 L37.6438,25.4219 C37.6438,24.9844 37.6125,24.8438 37.5344,24.6875 C37.3625,24.4375 37.0813,24.2813 36.8,24.2813 C36.5344,24.2813 36.2688,24.3906 36.0969,24.6406 C35.9875,24.7969 35.9563,24.9375 35.9563,25.4219 L35.9563,26.2969 L31.5969,26.2969 L31.5969,23.875 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="64" x="49.2" y="27.1543">customers</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="8" x2="126" y1="39" y2="39"/><ellipse cx="18" cy="50" fill="#000000" rx="3" ry="3" style="stroke: #000000; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="94" x="27" y="53.2104">customerId «PK»</text><line style="stroke: #A80036; stroke-width: 1.0;" x1="8" x2="126" y1="59.8047" y2="59.8047"/><ellipse cx="18" cy="70.8047" fill="#000000" rx="3" ry="3" style="stroke: #000000; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="62" x="27" y="74.0151">cust_name</text><ellipse cx="18" cy="83.6094" fill="#000000" rx="3" ry="3" style="stroke: #000000; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="74" x="27" y="86.8198">cust_address</text><!--MD5=[adf3a736410fe5ed508d24b7d390a37c]
+@startuml
+entity customers {
+  * customerId <<PK>>
+  - -
+  * cust_name
+  * cust_address
+}
+@enduml
+
+PlantUML version 1.2020.16(Sun Aug 23 20:20:43 UTC 2020)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>
