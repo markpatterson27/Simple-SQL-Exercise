@@ -49,7 +49,6 @@
           - name: points badge
             uses: emibcn/badge-action@v1
             with:
-              NAME: points
               LABEL: 'Points'
               STATUS: ${{ steps.autograder.outputs.points }}
               COLOR: cyan
