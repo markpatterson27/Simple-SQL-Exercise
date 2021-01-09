@@ -36,4 +36,41 @@
           # - name: run queries
           #   run: mssql -u sa -p Pa\$\$w0rd1234 .databases
 
-          - uses: education/autograding@v1
+          # use fork of education/autograding@v1
+          - uses: markpatterson27/autograding@v1
+            id: autograder
+            continue-on-error: true
+
+          # make dir for badges
+          - name: mkdir badges dir
+            run: mkdir -p .github/badges
+            
+          # make points badge
+          - name: points badge
+            uses: emibcn/badge-action@v1
+            with:
+              NAME: points
+              LABEL: 'Points'
+              STATUS: ${{ steps.autograder.outputs.points }}
+              COLOR: cyan
+              path: '.github/badges/points.svg'
+
+          - name: Upload badge as artifact
+            uses: actions/upload-artifact@v2
+            with:
+              name: badge
+              path: '.github/badges/points.svg'
+              if-no-files-found: error
+
+          # commit and push badge
+          - name: Commit badge
+            run: |
+              git config --local user.email "action@github.com"
+              git config --local user.name "GitHub Action"
+              git add '.github/badges/points.svg'
+              git commit -m "Add/Update badge"    
+          - name: Push badge commit
+            uses: ad-m/github-push-action@master
+            with:
+              github_token: ${{ secrets.GITHUB_TOKEN }}
+              branch: badges

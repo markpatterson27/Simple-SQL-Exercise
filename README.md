@@ -2,6 +2,8 @@
 
 ![GitHub Classroom Workflow](../../workflows/GitHub%20Classroom%20Workflow/badge.svg?branch=master)
 
+![Points badge](blob/badges/.github/badges/points.svg)
+
 In this exercise, learners/lecturers will write queries that create a database and a simple table in that database. Learners will then test their queries by pushing them to their GitHub repo and checking the output from automated tests.
 
 ## Exercise 1
