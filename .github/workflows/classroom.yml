@@ -42,8 +42,8 @@
           # - name: run queries
           #   run: mssql -u sa -p Pa\$\$w0rd1234 .databases
 
-          # use fork of education/autograding@v1
-          - uses: markpatterson27/autograding@v1
+          # add id to step so outputs can be referenced
+          - uses: education/autograding@v1
             id: autograder
             continue-on-error: true
 
@@ -58,7 +58,7 @@
             uses: emibcn/badge-action@v1
             with:
               LABEL: 'Points'
-              STATUS: ${{ steps.autograder.outputs.points }}
+              STATUS: ${{ steps.autograder.outputs.Points }}
               COLOR: cyan
               path: '.github/badges/points.svg'
 
