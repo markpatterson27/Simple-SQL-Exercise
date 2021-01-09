@@ -48,8 +48,10 @@
             continue-on-error: true
 
           # make dir for badges
-          - name: mkdir badges dir
-            run: mkdir -p .github/badges
+          - name: badges branch and make dir
+            run: |
+              git checkout badges
+              mkdir -p .github/badges
             
           # make points badge
           - name: points badge
