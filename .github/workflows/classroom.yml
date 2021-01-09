@@ -12,6 +12,8 @@
         runs-on: ubuntu-latest
         steps:
           - uses: actions/checkout@v2
+            with:
+              fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
 
           # - name: install npm mssql
           #   run: npm install mssql
