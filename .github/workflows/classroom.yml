@@ -62,12 +62,12 @@
               COLOR: cyan
               path: '.github/badges/points.svg'
 
-          - name: Upload badge as artifact
-            uses: actions/upload-artifact@v2
-            with:
-              name: badge
-              path: '.github/badges/points.svg'
-              if-no-files-found: error
+          # - name: Upload badge as artifact
+          #   uses: actions/upload-artifact@v2
+          #   with:
+          #     name: badge
+          #     path: '.github/badges/points.svg'
+          #     if-no-files-found: error
 
           # commit and push badge if score has changed
           - name: Commit badge
