@@ -83,3 +83,9 @@
             with:
               github_token: ${{ secrets.GITHUB_TOKEN }}
               branch: badges
+
+          # fail job if autograder returns failed
+          - name: check autograder pass fail
+            if: ${{ steps.autograder.outcome }}
+            # if: ${{ failure }}
+            run: exit 1
