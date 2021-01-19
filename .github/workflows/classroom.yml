@@ -79,7 +79,7 @@
             continue-on-error: true
           - name: Push badge commit
             uses: ad-m/github-push-action@master
-            if: success()
+            if: ${{ success() }}
             with:
               github_token: ${{ secrets.GITHUB_TOKEN }}
               branch: badges
