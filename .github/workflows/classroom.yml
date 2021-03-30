@@ -56,8 +56,8 @@
           #   run: mssql -u sa -p Pa\$\$w0rd1234 .databases
 
           # add id to step so outputs can be referenced
-          # - uses: education/autograding@v1
-          #   id: autograder
+          - uses: education/autograding@v1
+            id: autograder
           #   continue-on-error: true
 
           # # make dir for badges
