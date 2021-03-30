@@ -19,6 +19,12 @@
               SA_PASSWORD: 'Pa$$w0rd1234'
             ports:
             - 1433:1433
+            options: >-
+              --health-cmd /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P "$${SA_PASSWORD}" -Q "SELECT 1" -b -o /dev/null
+              --health-interval 10s
+              --health-timeout 3s
+              --health-retries 5
+              --health-start-period 10s
 
         steps:
           - uses: actions/checkout@v2
@@ -43,8 +49,8 @@
           # - name: setup SQL Server instance
           #   run: docker run -v $(pwd):/app -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Pa$$w0rd1234' -p 1433:1433 --name sql2017 -d mcr.microsoft.com/mssql/server:2017-latest
 
-          - name: pause
-            run: sleep 10
+          # - name: pause
+          #   run: sleep 10
 
           # - name: create command shortcut variable
           #   run: DBCMD="docker exec sql2017 /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Pa\$\$w0rd1234"
