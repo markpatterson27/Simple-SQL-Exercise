@@ -50,7 +50,7 @@
           #   run: DBCMD="docker exec sql2017 /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Pa\$\$w0rd1234"
 
           - name: check sql server running
-            run: sqlcmd -S localhost -U sa -P Pa\\$\\$w0rd1234 -Q \"SELECT NAME FROM sys.sysdatabases\""
+            run: sqlcmd -S localhost -U sa -P Pa\\$\\$w0rd1234 -Q "SELECT NAME FROM sys.sysdatabases"
 
           # - name: run queries
           #   run: mssql -u sa -p Pa\$\$w0rd1234 .databases
