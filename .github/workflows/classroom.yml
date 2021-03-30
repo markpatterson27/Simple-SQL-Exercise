@@ -69,6 +69,8 @@
             id: autograder
           #   continue-on-error: true
 
+          - run: echo ${{ steps.autograder.outputs.build-log }}
+
           # # make dir for badges
           # - name: badges branch and make dir
           #   run: |
