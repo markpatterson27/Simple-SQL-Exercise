@@ -23,7 +23,7 @@
     {
       "name": "Check customer table exists",
       "setup": "",
-      "run": "docker exec sql2017 /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Pa\\$\\$w0rd1234 -Q \"SELECT TABLE_NAME FROM SimpleDB.INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE'\"",
+      "run": "sqlcmd -S localhost -U sa -P Pa\\$\\$w0rd1234 -Q \"SELECT TABLE_NAME FROM SimpleDB.INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE'\"",
       "input": "",
       "output": "customers",
       "comparison": "included",
@@ -33,7 +33,7 @@
     {
       "name": "Check customer ID exists in customers table",
       "setup": "",
-      "run": "docker exec sql2017 /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Pa\\$\\$w0rd1234 -Q \"USE SimpleDB SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'customers' AND TABLE_SCHEMA='dbo'\"",
+      "run": "sqlcmd -S localhost -U sa -P Pa\\$\\$w0rd1234 -Q \"USE SimpleDB SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'customers' AND TABLE_SCHEMA='dbo'\"",
       "input": "",
       "output": "customerId",
       "comparison": "included",
@@ -43,7 +43,7 @@
     {
       "name": "Check customer ID data type",
       "setup": "",
-      "run": "docker exec sql2017 /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Pa\\$\\$w0rd1234 -Q \"USE SimpleDB SELECT DATA_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'customers' AND COLUMN_NAME = 'customerId'\"",
+      "run": "sqlcmd -S localhost -U sa -P Pa\\$\\$w0rd1234 -Q \"USE SimpleDB SELECT DATA_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'customers' AND COLUMN_NAME = 'customerId'\"",
       "input": "",
       "output": "int",
       "comparison": "included",
@@ -53,7 +53,7 @@
     {
       "name": "Check customer name exists in customers table",
       "setup": "",
-      "run": "docker exec sql2017 /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Pa\\$\\$w0rd1234 -Q \"USE SimpleDB SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'customers' AND TABLE_SCHEMA='dbo'\"",
+      "run": "sqlcmd -S localhost -U sa -P Pa\\$\\$w0rd1234 -Q \"USE SimpleDB SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'customers' AND TABLE_SCHEMA='dbo'\"",
       "input": "",
       "output": "cust_name",
       "comparison": "included",
@@ -63,7 +63,7 @@
     {
       "name": "Check customer name data type",
       "setup": "",
-      "run": "docker exec sql2017 /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Pa\\$\\$w0rd1234 -Q \"USE SimpleDB SELECT DATA_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'customers' AND COLUMN_NAME = 'cust_name'\"",
+      "run": "sqlcmd -S localhost -U sa -P Pa\\$\\$w0rd1234 -Q \"USE SimpleDB SELECT DATA_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'customers' AND COLUMN_NAME = 'cust_name'\"",
       "input": "",
       "output": "nvarchar",
       "comparison": "included",
@@ -73,7 +73,7 @@
     {
       "name": "Check customer address exists in customers table",
       "setup": "",
-      "run": "docker exec sql2017 /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Pa\\$\\$w0rd1234 -Q \"USE SimpleDB SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'customers' AND TABLE_SCHEMA='dbo'\"",
+      "run": "sqlcmd -S localhost -U sa -P Pa\\$\\$w0rd1234 -Q \"USE SimpleDB SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'customers' AND TABLE_SCHEMA='dbo'\"",
       "input": "",
       "output": "cust_address",
       "comparison": "included",
@@ -83,7 +83,7 @@
     {
       "name": "Check customer address data type",
       "setup": "",
-      "run": "docker exec sql2017 /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Pa\\$\\$w0rd1234 -Q \"USE SimpleDB SELECT DATA_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'customers' AND COLUMN_NAME = 'cust_address'\"",
+      "run": "sqlcmd -S localhost -U sa -P Pa\\$\\$w0rd1234 -Q \"USE SimpleDB SELECT DATA_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'customers' AND COLUMN_NAME = 'cust_address'\"",
       "input": "",
       "output": "nvarchar",
       "comparison": "included",
