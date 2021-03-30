@@ -10,6 +10,16 @@
       build:
         name: Autograding
         runs-on: ubuntu-latest
+
+        services:
+          sqlserver:
+            image: mcr.microsoft.com/mssql/server:2017-latest
+            env:
+              ACCEPT_EULA: Y
+              SA_PASSWORD: Pa$$w0rd1234
+            ports:
+            - 1433:1433
+
         steps:
           - uses: actions/checkout@v2
             # with:
@@ -30,21 +40,24 @@
           # - name: check files
           #   run: ls -al tSQLt
 
-          - name: setup SQL Server instance
-            run: docker run -v $(pwd):/app -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Pa$$w0rd1234' -p 1433:1433 --name sql2017 -d mcr.microsoft.com/mssql/server:2017-latest
+          # - name: setup SQL Server instance
+          #   run: docker run -v $(pwd):/app -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Pa$$w0rd1234' -p 1433:1433 --name sql2017 -d mcr.microsoft.com/mssql/server:2017-latest
 
-          - name: pause
-            run: sleep 10
+          # - name: pause
+          #   run: sleep 10
 
-          - name: create command shortcut variable
-            run: DBCMD="docker exec sql2017 /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Pa\$\$w0rd1234"
+          # - name: create command shortcut variable
+          #   run: DBCMD="docker exec sql2017 /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Pa\$\$w0rd1234"
+
+          - name: check sql server running
+            run: sqlcmd -S localhost -U sa -P Pa\\$\\$w0rd1234 -Q \"SELECT NAME FROM sys.sysdatabases\""
 
           # - name: run queries
           #   run: mssql -u sa -p Pa\$\$w0rd1234 .databases
 
           # add id to step so outputs can be referenced
-          - uses: education/autograding@v1
-            id: autograder
+          # - uses: education/autograding@v1
+          #   id: autograder
           #   continue-on-error: true
 
           # # make dir for badges
