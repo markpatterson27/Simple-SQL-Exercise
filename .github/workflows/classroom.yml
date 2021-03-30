@@ -16,7 +16,7 @@
             image: mcr.microsoft.com/mssql/server:2017-latest
             env:
               ACCEPT_EULA: Y
-              SA_PASSWORD: 'yourStrong(!)Passw0rd'
+              SA_PASSWORD: 'Pa$$w0rd1234'
             ports:
             - 1433:1433
 
@@ -50,7 +50,7 @@
           #   run: DBCMD="docker exec sql2017 /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Pa\$\$w0rd1234"
 
           - name: check sql server running
-            run: sqlcmd -S localhost -U SA -P 'yourStrong(!)Passw0rd' -Q "SELECT NAME FROM sys.sysdatabases"
+            run: sqlcmd -S localhost -U SA -P 'Pa$$w0rd1234' -Q "SELECT NAME FROM sys.sysdatabases"
 
           # - name: run queries
           #   run: mssql -u sa -p Pa\$\$w0rd1234 .databases
