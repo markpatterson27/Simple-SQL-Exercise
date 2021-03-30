@@ -67,9 +67,7 @@
           # add id to step so outputs can be referenced
           - uses: education/autograding@v1
             id: autograder
-            continue-on-error: true
-
-          - run: echo ${{ steps.autograder.outputs.build-log }}
+          #   continue-on-error: true
 
           # # make dir for badges
           # - name: badges branch and make dir
