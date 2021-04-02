@@ -6,6 +6,9 @@
         - '*'
         - '!badges'
 
+    env:
+      DBPASS: 'Pa$$w0rd1234'
+
     jobs:
       build:
         name: Autograding
@@ -16,7 +19,7 @@
             image: mcr.microsoft.com/mssql/server:2017-latest
             env:
               ACCEPT_EULA: Y
-              SA_PASSWORD: 'Pa$$w0rd1234'
+              SA_PASSWORD: ${{ env.DBPASS }}
             ports:
             - 1433:1433
             options: >-
