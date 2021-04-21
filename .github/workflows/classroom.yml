@@ -92,3 +92,49 @@
             # if: ${{ steps.autograder.outcome == 'failure' }}
             # if: ${{ failure }}
             run: exit 1
+
+      lint:
+        name: Linting
+        runs-on: ubuntu-latest
+        steps:
+          - uses: actions/checkout@v2
+          - uses: actions/setup-node@v2
+
+          # install linting tools
+          - run: npm install tsqllint
+
+          # lint files
+          - name: Lint files
+            run: npx tsqllint create-database.sql
+            env:
+              TSQLLINTRC: {
+                "rules": {
+                  "case-sensitive-variables": "error",
+                  "conditional-begin-end": "error",
+                  "cross-database-transaction": "error",
+                  "data-compression": "error",
+                  "data-type-length": "error",
+                  "delete-where": "error",
+                  "disallow-cursors": "error",
+                  "full-text": "error",
+                  "information-schema": "error",
+                  "keyword-capitalization": "error",
+                  "linked-server": "error",
+                  "multi-table-alias": "error",
+                  "named-constraint": "error",
+                  "non-sargable": "error",
+                  "object-property": "error",
+                  "print-statement": "error",
+                  "schema-qualify": "error",
+                  "select-star": "error",
+                  "semicolon-termination": "error",
+                  "set-ansi": "off",
+                  "set-nocount": "off",
+                  "set-quoted-identifier": "error",
+                  "set-transaction-isolation-level": "error",
+                  "set-variable": "error",
+                  "update-where": "error",
+                  "upper-lower": "error",
+                  "unicode-string": "error"
+                }
+              }
