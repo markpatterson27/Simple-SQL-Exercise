@@ -105,7 +105,9 @@
 
           # lint files
           - name: Lint files
-            run: npx tsqllint create-database.sql
+            run: |
+              echo $TSQLLINTRC
+              npx tsqllint create-database.sql
             env:
               TSQLLINTRC: '{
                 "rules": {
@@ -130,7 +132,7 @@
                   "semicolon-termination": "error",
                   "set-ansi": "off",
                   "set-nocount": "off",
-                  "set-quoted-identifier": "error",
+                  "set-quoted-identifier": "off",
                   "set-transaction-isolation-level": "error",
                   "set-variable": "error",
                   "update-where": "error",
