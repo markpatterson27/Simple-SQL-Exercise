@@ -98,8 +98,8 @@
         steps:
           # Checkout the source code so we have some files to look at.
           - uses: actions/checkout@v2
-          with:
-            fetch-depth: 0
+            with:
+              fetch-depth: 0
           # Run the reformat action
           - name: Reformat SQL Files
             uses: credfeto/action-sql-format@master
