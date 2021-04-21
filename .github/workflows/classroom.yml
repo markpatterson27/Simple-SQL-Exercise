@@ -110,6 +110,11 @@
             run: |
               git config --local user.email "<githubusername>@users.noreply.github.com"
               git config --local user.name "SQL Reformat Bot"
-              git commit --all -m"Reformat SQL Files to common format." || true
-          - name: Push
-            run: git push "https://${{github.actor}}:${{secrets.SOURCE_PUSH_TOKEN}}@github.com/${{github.repository}}.git" "HEAD:${{ env.GIT_BRANCH }}"
+              git commit --all -m "Reformat SQL Files to common format." || true
+          # - name: Push
+          #   run: git push "https://${{github.actor}}:${{secrets.SOURCE_PUSH_TOKEN}}@github.com/${{github.repository}}.git" "HEAD:${{ env.GIT_BRANCH }}"
+          - name: Push badge commit
+            uses: ad-m/github-push-action@master
+            with:
+              github_token: ${{ secrets.GITHUB_TOKEN }}
+              branch: ${{ env.GIT_BRANCH }}
