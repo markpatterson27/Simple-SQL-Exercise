@@ -106,7 +106,7 @@
           # lint files
           - name: Lint files
             run: |
-              echo $TSQLLINTRC
+              echo $TSQLLINTRC > .tsqllintrc
               npx tsqllint create-database.sql
             env:
               TSQLLINTRC: '{
