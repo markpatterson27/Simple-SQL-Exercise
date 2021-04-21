@@ -107,7 +107,7 @@
           - name: Lint files
             run: npx tsqllint create-database.sql
             env:
-              TSQLLINTRC: {
+              TSQLLINTRC: '{
                 "rules": {
                   "case-sensitive-variables": "error",
                   "conditional-begin-end": "error",
@@ -137,4 +137,4 @@
                   "upper-lower": "error",
                   "unicode-string": "error"
                 }
-              }
+              }'
