@@ -23,7 +23,7 @@
             ports:
             - 1433:1433
             options: >-
-              --health-cmd "/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P \"${SA_PASSWORD}\" -Q \"SELECT 1\" -b -o /dev/null"
+              --health-cmd "/opt/mssql-tools/bin/sqlcmd -S 127.0.0.1 -U sa -P \"${SA_PASSWORD}\" -Q \"SELECT 1\" -b -o /dev/null"
               --health-interval 10s
               --health-timeout 3s
               --health-retries 5
@@ -62,7 +62,7 @@
             run: docker ps -a
 
           - name: check sql server running
-            run: sqlcmd -S localhost -U SA -P 'Pa$$w0rd1234' -Q "SELECT NAME FROM sys.sysdatabases"
+            run: sqlcmd -S 127.0.0.1 -U SA -P 'Pa$$w0rd1234' -Q "SELECT NAME FROM sys.sysdatabases"
 
           # - name: run queries
           #   run: mssql -u sa -p Pa\$\$w0rd1234 .databases
