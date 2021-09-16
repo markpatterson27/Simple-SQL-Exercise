@@ -85,19 +85,13 @@ jobs:
           path: '.github/badges/points.svg'
 
       # commit and push badge if score has changed
-      - name: Commit badge
+      - name: Commit and push badge
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add '.github/badges'
-          git commit -m "Add/Update badge"
-        continue-on-error: true
-      - name: Push badge commit
-        uses: ad-m/github-push-action@master
-        if: ${{ success() }}
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: badges
+          git commit -m "Add/Update badge" || exit 0
+          git push origin badges
 
   # lint sql files
   reformat-sql:
@@ -114,15 +108,9 @@ jobs:
 
       - run: cat create-database.sql
 
-      - name: Commit files
+      - name: Commit and push files
         run: |
           git config --local user.email "<githubusername>@users.noreply.github.com"
           git config --local user.name "SQL Reformat Bot"
           git commit --all -m "Reformat SQL Files to common format." || true
-      # - name: Push
-      #   run: git push "https://${{github.actor}}:${{secrets.SOURCE_PUSH_TOKEN}}@github.com/${{github.repository}}.git" "HEAD:${{ env.GIT_BRANCH }}"
-      - name: Push badge commit
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ env.GIT_BRANCH }}
+          git push origin master
