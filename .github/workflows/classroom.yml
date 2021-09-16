@@ -75,14 +75,12 @@ jobs:
       - name: make badges dir
         run: mkdir -p .github/badges
 
-      # make points badge
-      - name: make points badge
-        uses: emibcn/badge-action@v1
+      # create points bar
+      - name: make points bar
+        uses: markpatterson27/points-bar@v1
         with:
-          LABEL: 'Points'
-          STATUS: ${{ needs.build.outputs.grading-score }}
-          COLOR: cyan
-          path: '.github/badges/points.svg'
+          points: ${{ needs.build.outputs.grading-score }}
+          path: '.github/badges/points-bar.svg'
 
       # commit and push badge if score has changed
       - name: Commit and push badge
